@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 export function MainHeroBox() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { name: "About Me", href: "#about" },
@@ -16,30 +16,32 @@ export function MainHeroBox() {
     { name: "Testimonials", href: "#testimonials" },
     { name: "Cool Stuff", href: "#cool-stuff" },
     { name: "Contact", href: "#contact" },
-  ]
+  ];
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    const element = document.querySelector(href)
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
-      })
+      });
     }
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   return (
     <div
-      className="relative min-h-[45vh] bg-cover bg-center bg-no-repeat"
+      className="relative min-h-[40vh] bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url(/images/math-background.png)" }}
     >
       <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Desktop Navigation - Horizontal at top */}
-        <div className="hidden md:flex justify-center space-x-6 mb-12">
+        <div className="hidden md:flex justify-center space-x-6 mb-14">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -52,7 +54,6 @@ export function MainHeroBox() {
           ))}
         </div>
 
-        {/* Mobile menu button */}
         <div className="md:hidden flex justify-center mb-8">
           <Button
             variant="outline"
@@ -60,18 +61,22 @@ export function MainHeroBox() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border-white/30 text-white"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
             <span className="ml-2">Menu</span>
           </Button>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center md:items-center justify-center gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
           <Image
             src="/images/ace-logo.png"
             alt="ACE Tutoring Logo"
-            width={300}
-            height={150}
-            className="h-32 w-auto object-contain object-center"
+            width={400}
+            height={200}
+            className="h-40 w-auto object-contain object-center"
             style={{ filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.3))" }}
           />
           <h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-lg text-center md:text-left">
@@ -97,5 +102,5 @@ export function MainHeroBox() {
         )}
       </div>
     </div>
-  )
+  );
 }

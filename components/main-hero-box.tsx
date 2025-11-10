@@ -35,12 +35,13 @@ export function MainHeroBox() {
 
   return (
     <div
-      className="relative min-h-[40vh] bg-cover bg-center bg-no-repeat"
+      className="relative min-h-[45vh] bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url(/images/math-background.png)" }}
     >
       <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Desktop Navigation - Horizontal at top */}
         <div className="hidden md:flex justify-center space-x-6 mb-14">
           {navItems.map((item) => (
             <a
@@ -54,6 +55,7 @@ export function MainHeroBox() {
           ))}
         </div>
 
+        {/* Mobile menu button */}
         <div className="md:hidden flex justify-center mb-8">
           <Button
             variant="outline"
@@ -70,6 +72,7 @@ export function MainHeroBox() {
           </Button>
         </div>
 
+        {/* HERO MAIN SECTION */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-10">
           <Image
             src="/images/ace-logo.png"

@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react";
 
 export function RegisterBar() {
   return (
-    <div className="bg-ace-blue text-white py-4 px-4">
+    <div className="bg-ace-blue text-white py-3 px-4">
       <div className="max-w-7xl mx-auto flex items-center justify-center">
         <span className="text-sm font-medium mr-4">
           Register Your Interest Here

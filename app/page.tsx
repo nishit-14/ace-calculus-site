@@ -1,12 +1,15 @@
-import { RegisterBar } from "@/components/register-bar"
-import { MainHeroBox } from "@/components/main-hero-box"
-import { VideoHighlightsSection } from "@/components/video-highlights-section"
-import { AboutSection } from "@/components/about-section"
-import { ClassesSection } from "@/components/classes-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
-import { CoolStuffSection } from "@/components/cool-stuff-section"
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
+"use client";
+
+import { RegisterBar } from "@/components/register-bar";
+import { MainHeroBox } from "@/components/main-hero-box";
+import { VideoHighlightsSection } from "@/components/video-highlights-section";
+import { AboutSection } from "@/components/about-section";
+import { ClassesSection } from "@/components/classes-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { CoolStuffSection } from "@/components/cool-stuff-section";
+import { ContactSection } from "@/components/contact-section";
+import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
   return (
@@ -30,6 +33,7 @@ export default function Home() {
         <ContactSection />
       </section>
       <Footer />
+      <Toaster /> {/* <-- HERE */}
     </main>
-  )
+  );
 }

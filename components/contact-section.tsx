@@ -35,11 +35,11 @@ export function ContactSection() {
     setLoading(false);
 
     if (!res.ok) {
-      toast.error("There was an issue sending your inquiry. Please try again.");
+      alert("There was an issue sending your inquiry. Please try again.");
       return;
     }
 
-    toast("✅ Inquiry Sent! Your message has been delivered.");
+    alert("✅ Inquiry Sent! Your message has been delivered.");
     e.target.reset();
   }
 

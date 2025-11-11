@@ -1,4 +1,5 @@
 "use client";
+import { Toaster } from "sonner";
 
 import { RegisterBar } from "@/components/register-bar";
 import { MainHeroBox } from "@/components/main-hero-box";
@@ -9,7 +10,6 @@ import { TestimonialsSection } from "@/components/testimonials-section";
 import { CoolStuffSection } from "@/components/cool-stuff-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
-import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
   return (
@@ -33,7 +33,7 @@ export default function Home() {
         <ContactSection />
       </section>
       <Footer />
-      <Toaster /> {/* <-- HERE */}
+      <Toaster richColors /> {/* <-- HERE */}
     </main>
   );
 }

@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       additionalInfo,
     } = body;
 
-    const teacherEmail = "gc95014@gmail.com"; // CLIENT EMAIL WHERE INQUIRIES GO
+    const teacherEmail = "mustangno7@gmail.com"; // CLIENT EMAIL WHERE INQUIRIES GO
 
     await resend.emails.send({
       from: "inquiries@acecalculus.com",

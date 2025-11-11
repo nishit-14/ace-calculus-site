@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 
 export function ContactSection() {
-  const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: any) {
@@ -36,21 +35,11 @@ export function ContactSection() {
     setLoading(false);
 
     if (!res.ok) {
-      toast({
-        title: "Error",
-        description:
-          "There was an issue sending your inquiry. Please try again.",
-        variant: "destructive",
-      });
+      toast.error("There was an issue sending your inquiry. Please try again.");
       return;
     }
 
-    toast({
-      title: "✅ Inquiry Sent",
-      description:
-        "Your message has been sent successfully. We will get back to you soon!",
-    });
-
+    toast("✅ Inquiry Sent! Your message has been delivered.");
     e.target.reset();
   }
 

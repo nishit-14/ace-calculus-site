@@ -24,7 +24,7 @@ export async function POST(req: Request) {
       from: "inquiries@acecalculus.com",
       to: teacherEmail,
       subject: "New AP Calculus Inquiry Submitted",
-      reply_to: parentEmail,
+      replyTo: parentEmail,
       text: `
 New Inquiry Received
 

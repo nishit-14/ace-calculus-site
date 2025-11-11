@@ -1,17 +1,20 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail } from "lucide-react";
 
 export function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
+            Get In Touch
+          </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Ready to start your journey to academic excellence? Let's discuss how we can help you achieve your goals.
+            Ready to start your journey to academic excellence? Let's discuss
+            how we can help your child succeed in AP Calculus.
           </p>
         </div>
 
@@ -19,57 +22,137 @@ export function ContactSection() {
           {/* Contact Form */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl text-gray-900">Send a Message</CardTitle>
+              <CardTitle className="text-2xl text-gray-900">
+                Send a Message
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name
-                  </label>
-                  <Input id="firstName" placeholder="Your first name" required />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
-                  </label>
-                  <Input id="lastName" placeholder="Your last name" required />
-                </div>
-              </div>
+              {/* Parent Full Name */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email
+                <label
+                  htmlFor="parentFullName"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Parent Full Name<span className="text-red-600">*</span>
                 </label>
-                <Input id="email" type="email" placeholder="your.email@example.com" required />
+                <Input
+                  id="parentFullName"
+                  placeholder="Full name of parent"
+                  required
+                />
               </div>
+
+              {/* Parent Phone Number */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
+                <label
+                  htmlFor="parentPhone"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Parent Phone Number<span className="text-red-600">*</span>
                 </label>
-                <Input id="phone" type="tel" placeholder="(555) 123-4567" required />
+                <Input
+                  id="parentPhone"
+                  type="tel"
+                  placeholder="(555) 123-4567"
+                  required
+                />
               </div>
+
+              {/* Parent Email Address */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                  Class
+                <label
+                  htmlFor="parentEmail"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Parent Email Address<span className="text-red-600">*</span>
+                </label>
+                <Input
+                  id="parentEmail"
+                  type="email"
+                  placeholder="parent.email@example.com"
+                  required
+                />
+              </div>
+
+              {/* Student Full Name */}
+              <div>
+                <label
+                  htmlFor="studentFullName"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Student Full Name<span className="text-red-600">*</span>
+                </label>
+                <Input
+                  id="studentFullName"
+                  placeholder="Full name of student"
+                  required
+                />
+              </div>
+
+              {/* Current School */}
+              <div>
+                <label
+                  htmlFor="currentSchool"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Current School<span className="text-red-600">*</span>
+                </label>
+                <Input id="currentSchool" placeholder="School name" required />
+              </div>
+
+              {/* Student Grade Level */}
+              <div>
+                <label
+                  htmlFor="studentGradeLevel"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Student Grade Level<span className="text-red-600">*</span>
+                </label>
+                <Input
+                  id="studentGradeLevel"
+                  placeholder="Example: 10th Grade"
+                  required
+                />
+              </div>
+
+              {/* AP Course Enrollment */}
+              <div>
+                <label
+                  htmlFor="apCourseEnrollment"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  AP Course Enrollment<span className="text-red-600">*</span>
                 </label>
                 <select
-                  id="subject"
+                  id="apCourseEnrollment"
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-ace-blue focus:border-ace-blue"
                 >
-                  <option value="">Select a Class</option>
+                  <option value="">Select a Course</option>
                   <option value="AB Calculus">AB Calculus</option>
                   <option value="BC Calculus">BC Calculus</option>
-                  <option value="Other">Other</option>
+                  <option value="Other">Other (please specify below)</option>
                 </select>
               </div>
+
+              {/* Additional Information */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
+                <label
+                  htmlFor="additionalInfo"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Additional Information (Optional)
                 </label>
-                <Textarea id="message" placeholder="Tell me about your learning goals and how I can help..." rows={4} />
+                <Textarea
+                  id="additionalInfo"
+                  placeholder="Anything else you’d like to add..."
+                  rows={4}
+                />
               </div>
-              <Button className="w-full bg-ace-blue hover:bg-ace-blue/90">Send Message</Button>
+
+              <Button className="w-full bg-ace-blue hover:bg-ace-blue/90">
+                Submit Inquiry
+              </Button>
             </CardContent>
           </Card>
 
@@ -106,5 +189,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

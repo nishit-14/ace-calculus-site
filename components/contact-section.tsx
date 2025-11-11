@@ -1,10 +1,59 @@
+"use client";
+
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 export function ContactSection() {
+  const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: any) {
+    e.preventDefault();
+    setLoading(true);
+
+    const data = {
+      parentFullName: e.target.parentFullName.value,
+      parentPhone: e.target.parentPhone.value,
+      parentEmail: e.target.parentEmail.value,
+      studentFullName: e.target.studentFullName.value,
+      currentSchool: e.target.currentSchool.value,
+      studentGradeLevel: e.target.studentGradeLevel.value,
+      apCourseEnrollment: e.target.apCourseEnrollment.value,
+      additionalInfo: e.target.additionalInfo.value,
+    };
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    setLoading(false);
+
+    if (!res.ok) {
+      toast({
+        title: "Error",
+        description:
+          "There was an issue sending your inquiry. Please try again.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    toast({
+      title: "✅ Inquiry Sent",
+      description:
+        "Your message has been sent successfully. We will get back to you soon!",
+    });
+
+    e.target.reset();
+  }
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,144 +68,113 @@ export function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl text-gray-900">
                 Send a Message
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              {/* Parent Full Name */}
-              <div>
-                <label
-                  htmlFor="parentFullName"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Parent Full Name<span className="text-red-600">*</span>
-                </label>
-                <Input
-                  id="parentFullName"
-                  placeholder="Full name of parent"
-                  required
-                />
-              </div>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label
+                    htmlFor="parentFullName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Parent Full Name<span className="text-red-600">*</span>
+                  </label>
+                  <Input id="parentFullName" required />
+                </div>
 
-              {/* Parent Phone Number */}
-              <div>
-                <label
-                  htmlFor="parentPhone"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Parent Phone Number<span className="text-red-600">*</span>
-                </label>
-                <Input
-                  id="parentPhone"
-                  type="tel"
-                  placeholder="(555) 123-4567"
-                  required
-                />
-              </div>
+                <div>
+                  <label
+                    htmlFor="parentPhone"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Parent Phone Number<span className="text-red-600">*</span>
+                  </label>
+                  <Input id="parentPhone" type="tel" required />
+                </div>
 
-              {/* Parent Email Address */}
-              <div>
-                <label
-                  htmlFor="parentEmail"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Parent Email Address<span className="text-red-600">*</span>
-                </label>
-                <Input
-                  id="parentEmail"
-                  type="email"
-                  placeholder="parent.email@example.com"
-                  required
-                />
-              </div>
+                <div>
+                  <label
+                    htmlFor="parentEmail"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Parent Email Address<span className="text-red-600">*</span>
+                  </label>
+                  <Input id="parentEmail" type="email" required />
+                </div>
 
-              {/* Student Full Name */}
-              <div>
-                <label
-                  htmlFor="studentFullName"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Student Full Name<span className="text-red-600">*</span>
-                </label>
-                <Input
-                  id="studentFullName"
-                  placeholder="Full name of student"
-                  required
-                />
-              </div>
+                <div>
+                  <label
+                    htmlFor="studentFullName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Student Full Name<span className="text-red-600">*</span>
+                  </label>
+                  <Input id="studentFullName" required />
+                </div>
 
-              {/* Current School */}
-              <div>
-                <label
-                  htmlFor="currentSchool"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Current School<span className="text-red-600">*</span>
-                </label>
-                <Input id="currentSchool" placeholder="School name" required />
-              </div>
+                <div>
+                  <label
+                    htmlFor="currentSchool"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Current School<span className="text-red-600">*</span>
+                  </label>
+                  <Input id="currentSchool" required />
+                </div>
 
-              {/* Student Grade Level */}
-              <div>
-                <label
-                  htmlFor="studentGradeLevel"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Student Grade Level<span className="text-red-600">*</span>
-                </label>
-                <Input
-                  id="studentGradeLevel"
-                  placeholder="Example: 10th Grade"
-                  required
-                />
-              </div>
+                <div>
+                  <label
+                    htmlFor="studentGradeLevel"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Student Grade Level<span className="text-red-600">*</span>
+                  </label>
+                  <Input id="studentGradeLevel" required />
+                </div>
 
-              {/* AP Course Enrollment */}
-              <div>
-                <label
-                  htmlFor="apCourseEnrollment"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  AP Course Enrollment<span className="text-red-600">*</span>
-                </label>
-                <select
-                  id="apCourseEnrollment"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-ace-blue focus:border-ace-blue"
-                >
-                  <option value="">Select a Course</option>
-                  <option value="AB Calculus">AB Calculus</option>
-                  <option value="BC Calculus">BC Calculus</option>
-                  <option value="Other">Other (please specify below)</option>
-                </select>
-              </div>
+                <div>
+                  <label
+                    htmlFor="apCourseEnrollment"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    AP Course Enrollment<span className="text-red-600">*</span>
+                  </label>
+                  <select
+                    id="apCourseEnrollment"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-ace-blue focus:border-ace-blue"
+                  >
+                    <option value="">Select a Course</option>
+                    <option value="AB Calculus">AB Calculus</option>
+                    <option value="BC Calculus">BC Calculus</option>
+                    <option value="Other">Other (please specify below)</option>
+                  </select>
+                </div>
 
-              {/* Additional Information */}
-              <div>
-                <label
-                  htmlFor="additionalInfo"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Additional Information (Optional)
-                </label>
-                <Textarea
-                  id="additionalInfo"
-                  placeholder="Anything else you’d like to add..."
-                  rows={4}
-                />
-              </div>
+                <div>
+                  <label
+                    htmlFor="additionalInfo"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Additional Information (Optional)
+                  </label>
+                  <Textarea id="additionalInfo" rows={4} />
+                </div>
 
-              <Button className="w-full bg-ace-blue hover:bg-ace-blue/90">
-                Submit Inquiry
-              </Button>
+                <Button
+                  disabled={loading}
+                  className="w-full bg-ace-blue hover:bg-ace-blue/90"
+                >
+                  {loading ? "Sending..." : "Submit Inquiry"}
+                </Button>
+              </form>
             </CardContent>
           </Card>
 
-          {/* Contact Information */}
           <div className="space-y-8">
             <Card>
               <CardContent className="p-6">

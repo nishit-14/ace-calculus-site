@@ -1,9 +1,8 @@
-"use client";
 import type React from "react";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "sonner"; // ✅ using Sonner for toast
+import { Toaster } from "sonner"; // ✅ Keep Sonner here
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,6 +23,7 @@ export const metadata: Metadata = {
   generator: "v0.app",
 };
 
+// ✅ No "use client" here — this stays a server component
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,7 +36,7 @@ export default function RootLayout({
     >
       <body className="font-sans">
         {children}
-        {/* ✅ Sonner Toaster (global for all pages) */}
+        {/* ✅ Sonner Toaster still works fine here */}
         <Toaster richColors position="top-center" />
       </body>
     </html>

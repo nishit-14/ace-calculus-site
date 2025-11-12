@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     const teacherEmail = "mustangno7@gmail.com"; // CLIENT EMAIL WHERE INQUIRIES GO
 
     await resend.emails.send({
-      from: "inquiries@acecalculus.com",
+      from: "Website Inquiry <onboarding@resend.dev>",
       to: teacherEmail,
       subject: "New AP Calculus Inquiry Submitted",
       replyTo: parentEmail,

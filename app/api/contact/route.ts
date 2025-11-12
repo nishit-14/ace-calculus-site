@@ -18,10 +18,10 @@ export async function POST(req: Request) {
       additionalInfo,
     } = body;
 
-    const teacherEmail = "mustangno7@gmail.com"; // CLIENT EMAIL WHERE INQUIRIES GO
+    const teacherEmail = "gc95014@gmail.com"; // CLIENT EMAIL WHERE INQUIRIES GO
 
     await resend.emails.send({
-      from: "Website Inquiry <onboarding@resend.dev>",
+      from: "ACE Calculus Inquiry <inquiries@acecalculus.com>",
       to: teacherEmail,
       subject: "New AP Calculus Inquiry Submitted",
       replyTo: parentEmail,

@@ -145,7 +145,7 @@ export function ContactSection() {
                     </label>
                     <Input
                       id="currentSchool"
-                      placeholder="Example: Cupertino High School"
+                      placeholder="Ex: Cupertino High School"
                       required
                     />
                   </div>
@@ -159,7 +159,7 @@ export function ContactSection() {
                     </label>
                     <Input
                       id="studentGradeLevel"
-                      placeholder="Example: 11th Grade"
+                      placeholder="Ex: 11th Grade"
                       required
                     />
                   </div>

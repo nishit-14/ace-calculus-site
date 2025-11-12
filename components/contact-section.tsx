@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "sonner"; // ✅ use sonner toast
 
 export function ContactSection() {
   const [loading, setLoading] = useState(false);
@@ -26,21 +26,29 @@ export function ContactSection() {
       additionalInfo: e.target.additionalInfo.value,
     };
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    setLoading(false);
+      setLoading(false);
 
-    if (!res.ok) {
-      alert("There was an issue sending your inquiry. Please try again.");
-      return;
+      if (!res.ok) {
+        toast.error(
+          "❌ There was an issue sending your inquiry. Please try again."
+        );
+        return;
+      }
+
+      toast.success("✅ Inquiry Sent! Your message has been delivered.");
+      e.target.reset();
+    } catch (err) {
+      console.error(err);
+      toast.error("⚠️ Something went wrong. Please try again later.");
+      setLoading(false);
     }
-
-    alert("✅ Inquiry Sent! Your message has been delivered.");
-    e.target.reset();
   }
 
   return (
@@ -57,6 +65,7 @@ export function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl text-gray-900">
@@ -164,6 +173,7 @@ export function ContactSection() {
             </CardContent>
           </Card>
 
+          {/* Contact Info */}
           <div className="space-y-8">
             <Card>
               <CardContent className="p-6">

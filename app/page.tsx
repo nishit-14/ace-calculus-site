@@ -1,5 +1,4 @@
 "use client";
-import { Toaster } from "sonner";
 
 import { RegisterBar } from "@/components/register-bar";
 import { MainHeroBox } from "@/components/main-hero-box";
@@ -33,7 +32,6 @@ export default function Home() {
         <ContactSection />
       </section>
       <Footer />
-      <Toaster richColors /> {/* <-- HERE */}
     </main>
   );
 }

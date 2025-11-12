@@ -1,8 +1,9 @@
+"use client";
 import type React from "react";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster"; // <-- ADD THIS
+import { Toaster } from "sonner"; // ✅ using Sonner for toast
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +36,8 @@ export default function RootLayout({
     >
       <body className="font-sans">
         {children}
-        <Toaster /> {/* <-- IMPORTANT */}
+        {/* ✅ Sonner Toaster (global for all pages) */}
+        <Toaster richColors position="top-center" />
       </body>
     </html>
   );

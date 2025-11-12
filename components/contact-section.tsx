@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, CheckCircle } from "lucide-react";
-import { toast } from "sonner";
 
 export function ContactSection() {
   const [loading, setLoading] = useState(false);
@@ -36,18 +35,11 @@ export function ContactSection() {
 
       setLoading(false);
 
-      if (!res.ok) {
-        toast.error(
-          "❌ There was an issue sending your inquiry. Please try again."
-        );
-        return;
-      }
+      if (!res.ok) return;
 
-      toast.success("✅ Inquiry Sent! Your message has been delivered.");
       setSubmitted(true);
     } catch (err) {
       console.error(err);
-      toast.error("⚠️ Something went wrong. Please try again later.");
       setLoading(false);
     }
   }

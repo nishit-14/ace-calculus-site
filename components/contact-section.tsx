@@ -94,9 +94,8 @@ export function ContactSection() {
                     </label>
                     <Input
                       id="parentFullName"
+                      placeholder="Enter full name"
                       required
-                      defaultValue="Parent full name"
-                      className="text-gray-700"
                     />
                   </div>
 
@@ -110,9 +109,8 @@ export function ContactSection() {
                     <Input
                       id="parentPhone"
                       type="tel"
+                      placeholder="(408) 123-4567"
                       required
-                      defaultValue="(555) 123-4567"
-                      className="text-gray-700"
                     />
                   </div>
 
@@ -127,9 +125,8 @@ export function ContactSection() {
                     <Input
                       id="parentEmail"
                       type="email"
+                      placeholder="parent@email.com"
                       required
-                      defaultValue="parent@example.com"
-                      className="text-gray-700"
                     />
                   </div>
 
@@ -142,9 +139,8 @@ export function ContactSection() {
                     </label>
                     <Input
                       id="studentFullName"
+                      placeholder="Enter student's full name"
                       required
-                      defaultValue="Student full name"
-                      className="text-gray-700"
                     />
                   </div>
 
@@ -157,9 +153,8 @@ export function ContactSection() {
                     </label>
                     <Input
                       id="currentSchool"
+                      placeholder="Example: Cupertino High School"
                       required
-                      defaultValue="Student high school"
-                      className="text-gray-700"
                     />
                   </div>
 
@@ -172,9 +167,8 @@ export function ContactSection() {
                     </label>
                     <Input
                       id="studentGradeLevel"
+                      placeholder="Example: 11th Grade"
                       required
-                      defaultValue="11th Grade"
-                      className="text-gray-700"
                     />
                   </div>
 
@@ -190,7 +184,6 @@ export function ContactSection() {
                       id="apCourseEnrollment"
                       required
                       className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-ace-blue focus:border-ace-blue text-gray-700"
-                      defaultValue=""
                     >
                       <option value="">Select a Course</option>
                       <option value="AB Calculus">AB Calculus</option>
@@ -211,8 +204,7 @@ export function ContactSection() {
                     <Textarea
                       id="additionalInfo"
                       rows={4}
-                      defaultValue="My child is preparing for the May AP exam."
-                      className="text-gray-700"
+                      placeholder="Anything else you’d like to share..."
                     />
                   </div>
 

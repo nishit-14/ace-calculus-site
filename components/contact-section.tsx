@@ -127,12 +127,11 @@ export function ContactSection() {
                       htmlFor="studentFullName"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Student Full Name<span className="text-red-600">*</span>
+                      Student Full Name
                     </label>
                     <Input
                       id="studentFullName"
                       placeholder="Enter student's full name"
-                      required
                     />
                   </div>
 
@@ -141,12 +140,11 @@ export function ContactSection() {
                       htmlFor="currentSchool"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Current School<span className="text-red-600">*</span>
+                      Current School
                     </label>
                     <Input
                       id="currentSchool"
                       placeholder="Ex: Cupertino High School"
-                      required
                     />
                   </div>
 
@@ -155,12 +153,11 @@ export function ContactSection() {
                       htmlFor="studentGradeLevel"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      Student Grade Level<span className="text-red-600">*</span>
+                      Student Grade Level
                     </label>
                     <Input
                       id="studentGradeLevel"
                       placeholder="Ex: 11th Grade"
-                      required
                     />
                   </div>
 

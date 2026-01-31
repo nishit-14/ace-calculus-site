@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Calculator, Users, Clock, Calendar, Video, Award } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Calculator, Users, Clock, Calendar, Video, Award } from "lucide-react";
 
 export function ClassesSection() {
   const calculusClasses = [
     {
       title: "AB Calculus",
-      duration: "January 15th – May 7th, 2026",
+      duration: "June 17th – August 10th, 2026",
       sessions: "16 classes of 1.5 hrs each",
-      schedule: "Thursdays 7:30 – 9 pm",
-      fee: "$650",
-      classSize: "Small class size capped at 12, so sign up early",
-      officeHours: "Monday 9-10 pm, Thursday 9-10 pm",
+      schedule: "Monday & Wednesday · 7:30 PM – 9:00 PM",
+      fee: "$695",
+      classSize: "Small class size strictly capped, so sign up early",
+      officeHours: "Monday & Wednesday · 9:00 PM – 10:00 PM",
       features: [
         "Integration, Applications of Integrals, Differential Equations",
         "Thorough review of Limits, Continuity, Derivatives, Applications of Derivatives",
@@ -22,27 +22,30 @@ export function ClassesSection() {
     },
     {
       title: "BC Calculus",
-      duration: "January 5th – May 4th, 2026",
-      sessions: "20 classes of 1.5 hrs each",
-      schedule: "Mondays 7:30 – 9 pm",
-      fee: "$650",
+      duration: "June 17th – August 10th, 2026",
+      sessions: "16 classes of 1.5 hrs each",
+      schedule: "Monday & Wednesday · 7:30 PM – 9:00 PM",
+      fee: "$695",
       classSize: "Small class size strictly capped, so sign up early",
-      officeHours: "Monday 9-10 pm, Thursday 9-10 pm",
+      officeHours: "Monday & Wednesday · 9:00 PM – 10:00 PM",
       features: [
         "Parametric equations, Polar coordinates, Vector-valued functions, Infinite sequences and series",
         "Thorough review of earlier units: Limits, Continuity, Derivatives, Integrals, Applications of both",
         "6 weeks of AP Bootcamp intensive prep with 2 full-length mock papers",
       ],
     },
-  ]
+  ];
 
   return (
     <section id="classes" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">AP Calculus Classes</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
+            AP Calculus Classes
+          </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Comprehensive AP Calculus preparation with personalized attention and proven results.
+            Comprehensive AP Calculus preparation with personalized attention
+            and proven results.
           </p>
         </div>
 
@@ -58,8 +61,12 @@ export function ClassesSection() {
                     <Calculator className="h-8 w-8 text-ace-blue" />
                   </div>
                   <div>
-                    <CardTitle className="text-2xl text-gray-900">{classItem.title}</CardTitle>
-                    <p className="text-lg font-semibold text-ace-green">{classItem.fee}</p>
+                    <CardTitle className="text-2xl text-gray-900">
+                      {classItem.title}
+                    </CardTitle>
+                    <p className="text-lg font-semibold text-ace-green">
+                      {classItem.fee}
+                    </p>
                   </div>
                 </div>
               </CardHeader>
@@ -84,7 +91,9 @@ export function ClassesSection() {
                   <div className="flex items-start space-x-3">
                     <Clock className="h-5 w-5 text-ace-blue mt-0.5" />
                     <div className="text-gray-700">
-                      <p className="font-semibold text-sm">Prof's Office Hours:</p>
+                      <p className="font-semibold text-sm">
+                        Prof's Office Hours:
+                      </p>
                       <p className="text-sm">{classItem.officeHours}</p>
                     </div>
                   </div>
@@ -97,7 +106,10 @@ export function ClassesSection() {
                   </h4>
                   <ul className="space-y-2">
                     {classItem.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-2">
+                      <li
+                        key={featureIndex}
+                        className="flex items-start space-x-2"
+                      >
                         <div className="w-2 h-2 bg-ace-blue rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-gray-600 text-sm">{feature}</span>
                       </li>
@@ -108,9 +120,9 @@ export function ClassesSection() {
                 <Button
                   className="w-full mt-6 bg-ace-blue hover:bg-ace-blue/90"
                   onClick={() => {
-                    const contactSection = document.getElementById("contact")
+                    const contactSection = document.getElementById("contact");
                     if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: "smooth" })
+                      contactSection.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
                 >
@@ -131,26 +143,36 @@ export function ClassesSection() {
               <div className="bg-ace-blue/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Users className="h-8 w-8 text-ace-blue" />
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Small Class Sizes</h4>
-              <p className="text-gray-600 text-sm">Personalized attention for maximum learning</p>
+              <h4 className="font-semibold text-gray-900 mb-2">
+                Small Class Sizes
+              </h4>
+              <p className="text-gray-600 text-sm">
+                Personalized attention for maximum learning
+              </p>
             </div>
             <div className="text-center">
               <div className="bg-ace-green/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Video className="h-8 w-8 text-ace-green" />
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Class Recordings</h4>
-              <p className="text-gray-600 text-sm">Review content anytime or catch up on missed classes</p>
+              <h4 className="font-semibold text-gray-900 mb-2">
+                Class Recordings
+              </h4>
+              <p className="text-gray-600 text-sm">
+                Review content anytime or catch up on missed classes
+              </p>
             </div>
             <div className="text-center">
               <div className="bg-ace-blue/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Award className="h-8 w-8 text-ace-blue" />
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">AP Exam Prep</h4>
-              <p className="text-gray-600 text-sm">Intensive bootcamp with full-length practice exams</p>
+              <p className="text-gray-600 text-sm">
+                Intensive bootcamp with full-length practice exams
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

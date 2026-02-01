@@ -15,9 +15,11 @@ export function ClassesSection() {
       classSize: "Small class size strictly capped, so sign up early",
       officeHours: "Monday & Wednesday · 9:00 PM – 10:00 PM",
       features: [
-        "Integration, Applications of Integrals, Differential Equations",
-        "Thorough review of Limits, Continuity, Derivatives, Applications of Derivatives",
-        "6 weeks of AP Bootcamp intensive prep with 2 full-length mock papers",
+        "Unit 1: Limits and Continuity Equations",
+        "Unit 2: Differentiation - Definition and Properties",
+        "Unit 3: Differentiation - Composite, Implicit and Inverse Functions",
+        "Unit 4: Contextual Applications of Differentiation",
+        "Unit 5: Analytical Applications of Differentiation",
       ],
     },
     {
@@ -29,9 +31,11 @@ export function ClassesSection() {
       classSize: "Small class size strictly capped, so sign up early",
       officeHours: "Monday & Wednesday · 9:00 PM – 10:00 PM",
       features: [
-        "Parametric equations, Polar coordinates, Vector-valued functions, Infinite sequences and series",
-        "Thorough review of earlier units: Limits, Continuity, Derivatives, Integrals, Applications of both",
-        "6 weeks of AP Bootcamp intensive prep with 2 full-length mock papers",
+        "Unit 1: Limits and Continuity Equations",
+        "Unit 2: Differentiation - Definition and Properties",
+        "Unit 3: Differentiation - Composite, Implicit and Inverse Functions",
+        "Unit 4: Contextual Applications of Differentiation",
+        "Unit 5: Analytical Applications of Differentiation",
       ],
     },
   ];

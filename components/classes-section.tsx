@@ -8,10 +8,10 @@ export function ClassesSection() {
   const calculusClasses = [
     {
       title: "AB Calculus",
-      duration: "June 17th – August 10th, 2026",
+      duration: "Date: June 15th - August 5th, 2026",
       sessions: "16 classes of 1.5 hrs each",
-      schedule: "Monday & Wednesday · 7:30 PM – 9:00 PM",
-      fee: "$695",
+      schedule: "Time: Mon & Wed · 7:00 PM - 8:30 PM",
+      fee: "Fees: $750",
       classSize: "Small class size strictly capped, so sign up early",
       officeHours: "Monday & Wednesday · 9:00 PM – 10:00 PM",
       features: [
@@ -24,10 +24,10 @@ export function ClassesSection() {
     },
     {
       title: "BC Calculus",
-      duration: "June 17th – August 10th, 2026",
+      duration: "Date: June 15th - August 5th, 2026",
       sessions: "16 classes of 1.5 hrs each",
-      schedule: "Monday & Wednesday · 7:30 PM – 9:00 PM",
-      fee: "$695",
+      schedule: "Time: Mon & Wed · 7:00 PM - 8:30 PM",
+      fee: "Fees: $750",
       classSize: "Small class size strictly capped, so sign up early",
       officeHours: "Monday & Wednesday · 9:00 PM – 10:00 PM",
       features: [
